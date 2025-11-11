@@ -1,0 +1,34 @@
+# Node modules
+/node_modules
+
+# Compilation output
+/dist
+
+# pnpm deploy output
+/bundle
+
+# Hardhat Build Artifacts
+/artifacts
+
+# Hardhat compilation (v2) support directory
+/cache
+
+# Typechain output
+/types
+
+# Hardhat coverage reports
+/coverage
+
+# Environment variables (IMPORTANT: contains private keys)
+.env
+.env.local
+.env.*.local
+
+# Hardhat keystore
+.hardhat-keystore
+
+# macOS
+.DS_Store
+
+# Ignition deployments
+/ignition/deployments/chain-*
