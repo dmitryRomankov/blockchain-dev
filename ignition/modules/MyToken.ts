@@ -1,13 +1,23 @@
 import { buildModule } from '@nomicfoundation/hardhat-ignition/modules';
-import { parseEther } from 'viem';
+import { parseEther, encodeFunctionData } from 'viem';
 
 const MyTokenModule = buildModule('MyTokenModule', (m) => {
   // Default: 1 million tokens
   const initialSupply = m.getParameter('initialSupply', parseEther('1000000'));
 
-  const myToken = m.contract('MyToken', [initialSupply]);
+  // Step 1: Deploy the implementation contract (logic)
+  const myTokenImplementation = m.contract('MyToken', []);
 
-  return { myToken };
+  // Step 2: Deploy the proxy contract pointing to the implementation
+  const myTokenProxy = m.contract('MyTokenProxy', [
+    myTokenImplementation,
+    m.encodeFunctionCall(myTokenImplementation, 'initialize', [initialSupply]),
+  ]);
+
+  return {
+    implementation: myTokenImplementation,
+    proxy: myTokenProxy,
+  };
 });
 
 export default MyTokenModule;

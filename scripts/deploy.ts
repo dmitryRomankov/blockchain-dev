@@ -1,4 +1,4 @@
-import { parseEther, formatEther } from 'viem';
+import { parseEther, formatEther, encodeFunctionData } from 'viem';
 import { network } from 'hardhat';
 
 async function main() {
@@ -17,14 +17,42 @@ async function main() {
   const initialSupply = parseEther('1000000');
   console.log('Initial supply:', formatEther(initialSupply), 'MTK');
 
-  const myToken = await viem.deployContract('MyToken', [initialSupply]);
+  // Deploy implementation
+  const implementation = await viem.deployContract('MyToken');
+  console.log('Implementation deployed to:', implementation.address);
 
-  console.log('✅ MyToken deployed to:', myToken.address);
+  // Encode initialize call
+  const initializeData = encodeFunctionData({
+    abi: [
+      {
+        inputs: [
+          { internalType: 'uint256', name: 'initialSupply', type: 'uint256' },
+        ],
+        name: 'initialize',
+        outputs: [],
+        stateMutability: 'nonpayable',
+        type: 'function',
+      },
+    ],
+    functionName: 'initialize',
+    args: [initialSupply],
+  });
+
+  // Deploy proxy
+  const proxy = await viem.deployContract('MyTokenProxy', [
+    implementation.address,
+    initializeData,
+  ]);
+
+  const myToken = await viem.getContractAt('MyToken', proxy.address);
+
+  console.log('✅ MyToken Proxy deployed to:', proxy.address);
+  console.log('Implementation at:', implementation.address);
   console.log('Token Name: MyToken');
   console.log('Token Symbol: MTK');
   console.log('Owner:', deployer.account.address);
   console.log(
-    `View on Polygonscan: https://amoy.polygonscan.com/address/${myToken.address}`
+    `View Proxy on Polygonscan: https://amoy.polygonscan.com/address/${proxy.address}`
   );
 }
 

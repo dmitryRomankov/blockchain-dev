@@ -22,6 +22,7 @@
   "type": "module",
   "dependencies": {
     "@openzeppelin/contracts": "^5.4.0",
+    "@openzeppelin/contracts-upgradeable": "^5.4.0",
     "chai": "^6.2.1"
   }
 }

@@ -1,17 +1,41 @@
 import '@nomicfoundation/hardhat-toolbox-viem';
 import { describe, it } from 'node:test';
 import { network } from 'hardhat';
-import { parseEther } from 'viem';
+import { parseEther, encodeFunctionData } from 'viem';
 import assert from 'node:assert/strict';
 
 describe('MyToken', async function () {
   const { viem } = await network.connect();
 
+  async function deployToken(initialSupply: bigint) {
+    const implementation = await viem.deployContract('MyToken');
+    const initializeData = encodeFunctionData({
+      abi: [
+        {
+          inputs: [
+            { internalType: 'uint256', name: 'initialSupply', type: 'uint256' },
+          ],
+          name: 'initialize',
+          outputs: [],
+          stateMutability: 'nonpayable',
+          type: 'function',
+        },
+      ],
+      functionName: 'initialize',
+      args: [initialSupply],
+    });
+    const proxy = await viem.deployContract('MyTokenProxy', [
+      implementation.address,
+      initializeData,
+    ]);
+    return viem.getContractAt('MyToken', proxy.address);
+  }
+
   it('Should deploy with correct initial supply', async function () {
     const initialSupply = parseEther('1000000');
     const [deployer] = await viem.getWalletClients();
 
-    const myToken = await viem.deployContract('MyToken', [initialSupply]);
+    const myToken = await deployToken(initialSupply);
 
     const balance = await myToken.read.balanceOf([deployer.account.address]);
     assert.equal(balance, initialSupply);
@@ -21,7 +45,7 @@ describe('MyToken', async function () {
     const initialSupply = parseEther('1000000');
     const [deployer, recipient] = await viem.getWalletClients();
 
-    const myToken = await viem.deployContract('MyToken', [initialSupply]);
+    const myToken = await deployToken(initialSupply);
     const transferAmount = parseEther('100');
 
     await myToken.write.transfer([recipient.account.address, transferAmount]);
@@ -41,7 +65,7 @@ describe('MyToken', async function () {
     const initialSupply = parseEther('1000');
     const [_, recipient] = await viem.getWalletClients();
 
-    const myToken = await viem.deployContract('MyToken', [initialSupply]);
+    const myToken = await deployToken(initialSupply);
     const transferAmount = parseEther('10000');
 
     await assert.rejects(
@@ -61,7 +85,7 @@ describe('MyToken', async function () {
     const initialSupply = parseEther('1000000');
     const [_, recipient] = await viem.getWalletClients();
 
-    const myToken = await viem.deployContract('MyToken', [initialSupply]);
+    const myToken = await deployToken(initialSupply);
     const mintAmount = parseEther('500000');
 
     await myToken.write.mint([recipient.account.address, mintAmount]);
@@ -79,7 +103,7 @@ describe('MyToken', async function () {
     const initialSupply = parseEther('1000000');
     const [_, nonOwner] = await viem.getWalletClients();
 
-    const myToken = await viem.deployContract('MyToken', [initialSupply]);
+    const myToken = await deployToken(initialSupply);
     const mintAmount = parseEther('100');
 
     await assert.rejects(
@@ -98,7 +122,7 @@ describe('MyToken', async function () {
     const initialSupply = parseEther('1000000');
     const [deployer] = await viem.getWalletClients();
 
-    const myToken = await viem.deployContract('MyToken', [initialSupply]);
+    const myToken = await deployToken(initialSupply);
     const burnAmount = parseEther('100000');
 
     await myToken.write.burn([burnAmount]);
@@ -114,7 +138,7 @@ describe('MyToken', async function () {
     const initialSupply = parseEther('1000');
     const [deployer] = await viem.getWalletClients();
 
-    const myToken = await viem.deployContract('MyToken', [initialSupply]);
+    const myToken = await deployToken(initialSupply);
     const burnAmount = parseEther('10000');
 
     await assert.rejects(
@@ -131,7 +155,7 @@ describe('MyToken', async function () {
     const initialSupply = parseEther('1000000');
     const [deployer, recipient] = await viem.getWalletClients();
 
-    const myToken = await viem.deployContract('MyToken', [initialSupply]);
+    const myToken = await deployToken(initialSupply);
 
     await myToken.write.transfer([recipient.account.address, 0n]);
 
@@ -150,7 +174,7 @@ describe('MyToken', async function () {
     const initialSupply = parseEther('1000000');
     const [deployer, recipient1, recipient2] = await viem.getWalletClients();
 
-    const myToken = await viem.deployContract('MyToken', [initialSupply]);
+    const myToken = await deployToken(initialSupply);
     const amount1 = parseEther('100');
     const amount2 = parseEther('200');
 
