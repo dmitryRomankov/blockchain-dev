@@ -1,0 +1,33 @@
+{
+  "name": "Student Visit Card #1",
+  "description": "Soulbound Student Visit Card - This NFT represents a unique student identity that cannot be transferred.",
+  "image": "ipfs://QmExampleImageHash1/student-card-1.png",
+  "attributes": [
+    {
+      "trait_type": "Student Name",
+      "value": "Alice Johnson"
+    },
+    {
+      "trait_type": "Student ID",
+      "value": "STU2025001"
+    },
+    {
+      "trait_type": "Course",
+      "value": "Computer Science"
+    },
+    {
+      "trait_type": "Year",
+      "value": "2025"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Soulbound Token"
+    },
+    {
+      "trait_type": "Transferable",
+      "value": "No"
+    }
+  ],
+  "external_url": "https://your-university.edu/students/STU2025001",
+  "background_color": "1E40AF"
+}

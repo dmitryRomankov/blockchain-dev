@@ -1,0 +1,40 @@
+{
+  "name": "Earth Golem",
+  "description": "A massive construct of stone and earth with unmatched strength. Earth Golems are the strongest characters, capable of crushing any obstacle.",
+  "image": "ipfs://QmGameCharacters/earth-golem.png",
+  "external_url": "https://yourgame.com/characters/6",
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "Earth Golem"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Brown"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 40,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Strength",
+      "value": 100,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Earth"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Golem"
+    }
+  ]
+}

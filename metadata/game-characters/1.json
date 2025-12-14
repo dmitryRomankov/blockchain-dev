@@ -1,0 +1,40 @@
+{
+  "name": "Ice Mage",
+  "description": "A powerful sorcerer wielding the magic of ice and frost. Ice Mages can freeze enemies in their tracks and control the battlefield with devastating cold spells.",
+  "image": "ipfs://QmGameCharacters/ice-mage.png",
+  "external_url": "https://yourgame.com/characters/1",
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "Ice Mage"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Blue"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 70,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Strength",
+      "value": 80,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Ice"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Mage"
+    }
+  ]
+}

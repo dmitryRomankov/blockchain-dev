@@ -1,0 +1,40 @@
+{
+  "name": "Fire Dragon",
+  "description": "A legendary fire-breathing dragon with immense power and speed. Masters of flame and destruction, Fire Dragons are the ultimate offensive characters in battle.",
+  "image": "ipfs://QmGameCharacters/fire-dragon.png",
+  "external_url": "https://yourgame.com/characters/0",
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "Fire Dragon"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Red"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 85,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Strength",
+      "value": 95,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Fire"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Dragon"
+    }
+  ]
+}

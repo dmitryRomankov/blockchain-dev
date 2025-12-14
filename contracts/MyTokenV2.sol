@@ -68,7 +68,7 @@ contract MyTokenV2 is
      * @notice NEW FUNCTION in V2 - does not affect storage
      */
     function version() public pure returns (string memory) {
-        return "V2";
+        return "--V2--";
     }
 
     /**

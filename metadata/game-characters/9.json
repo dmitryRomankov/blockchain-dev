@@ -1,0 +1,40 @@
+{
+  "name": "Void Sorcerer",
+  "description": "A mysterious sorcerer who harnesses the power of the void. Void Sorcerers wield dark magic and reality-bending abilities.",
+  "image": "ipfs://QmGameCharacters/void-sorcerer.png",
+  "external_url": "https://yourgame.com/characters/9",
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "Void Sorcerer"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Purple"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 75,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Strength",
+      "value": 88,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Epic"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Void"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Sorcerer"
+    }
+  ]
+}

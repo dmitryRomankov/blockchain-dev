@@ -1,0 +1,40 @@
+{
+  "name": "Forest Elf",
+  "description": "Swift and agile guardian of the forest. Forest Elves are masters of speed and precision, striking quickly before disappearing into the woods.",
+  "image": "ipfs://QmGameCharacters/forest-elf.png",
+  "external_url": "https://yourgame.com/characters/2",
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "Forest Elf"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Green"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 90,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Strength",
+      "value": 65,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Nature"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Elf"
+    }
+  ]
+}

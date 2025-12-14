@@ -1,0 +1,40 @@
+{
+  "name": "Water Healer",
+  "description": "A mystic healer channeling the restorative power of water. Water Healers support their team with healing and defensive abilities.",
+  "image": "ipfs://QmGameCharacters/water-healer.png",
+  "external_url": "https://yourgame.com/characters/8",
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "Water Healer"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Cyan"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 65,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Strength",
+      "value": 55,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Water"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Healer"
+    }
+  ]
+}

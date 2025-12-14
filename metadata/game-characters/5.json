@@ -1,0 +1,40 @@
+{
+  "name": "Wind Archer",
+  "description": "A master archer who commands the power of wind. Wind Archers strike from long range with incredible accuracy and speed.",
+  "image": "ipfs://QmGameCharacters/wind-archer.png",
+  "external_url": "https://yourgame.com/characters/5",
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "Wind Archer"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Silver"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 88,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Strength",
+      "value": 75,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Rare"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Wind"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Archer"
+    }
+  ]
+}

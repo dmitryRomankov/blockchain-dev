@@ -46,7 +46,7 @@ async function main() {
 
   const myToken = await viem.getContractAt('MyToken', proxy.address);
 
-  console.log('✅ MyToken Proxy deployed to:', proxy.address);
+  console.log('MyToken Proxy deployed to:', proxy.address);
   console.log('Implementation at:', implementation.address);
   console.log('Token Name: MyToken');
   console.log('Token Symbol: MTK');

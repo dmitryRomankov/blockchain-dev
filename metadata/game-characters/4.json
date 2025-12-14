@@ -1,0 +1,40 @@
+{
+  "name": "Light Paladin",
+  "description": "A holy warrior blessed with divine power. Light Paladins are incredibly strong defenders who protect their allies with unwavering courage.",
+  "image": "ipfs://QmGameCharacters/light-paladin.png",
+  "external_url": "https://yourgame.com/characters/4",
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "Light Paladin"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Gold"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 60,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Strength",
+      "value": 90,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Light"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Paladin"
+    }
+  ]
+}

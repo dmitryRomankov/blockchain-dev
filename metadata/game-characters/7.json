@@ -1,0 +1,40 @@
+{
+  "name": "Lightning Warrior",
+  "description": "A warrior infused with the power of lightning. Lightning Warriors are legendary fighters who strike with electrifying speed and devastating power.",
+  "image": "ipfs://QmGameCharacters/lightning-warrior.png",
+  "external_url": "https://yourgame.com/characters/7",
+  "attributes": [
+    {
+      "trait_type": "Character",
+      "value": "Lightning Warrior"
+    },
+    {
+      "trait_type": "Color",
+      "value": "Yellow"
+    },
+    {
+      "trait_type": "Speed",
+      "value": 92,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Strength",
+      "value": 85,
+      "display_type": "number",
+      "max_value": 100
+    },
+    {
+      "trait_type": "Rarity",
+      "value": "Legendary"
+    },
+    {
+      "trait_type": "Element",
+      "value": "Lightning"
+    },
+    {
+      "trait_type": "Type",
+      "value": "Warrior"
+    }
+  ]
+}
